@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="2026年10月2日(金)〜4日(日) 開催。プログラミング未経験歓迎、選考なし。現役東大生・院生を中心に、アイデアからMVP開発まで72時間で走り抜ける超実践型スタートアップイベント。審査員：Coral Capital 共同創業者 澤山陽平 氏。">
+<meta name="description" content="2026年10月2日(金)〜4日(日) 開催。プログラミング未経験歓迎、選考なし・先着20名。現役東大生・院生を中心に、アイデアからMVP開発まで72時間で走り抜ける超実践型スタートアップイベント。審査員：Coral Capital 創業パートナー 澤山陽平 氏。">
 <meta name="theme-color" content="#1B1464">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2032%2032%22%3E%3Crect%20width=%2232%22%20height=%2232%22%20fill=%22%23fff%22/%3E%3Crect%20x=%226%22%20y=%221%22%20width=%229.4%22%20height=%229.4%22%20fill=%22%230071BC%22/%3E%3Crect%20x=%2216%22%20y=%221%22%20width=%229.4%22%20height=%229.4%22%20fill=%22%2354A0D2%22/%3E%3Crect%20x=%226%22%20y=%2211%22%20width=%229.4%22%20height=%229.4%22%20fill=%22%231B1464%22/%3E%3Crect%20x=%2216%22%20y=%2211%22%20width=%229.4%22%20height=%229.4%22%20fill=%22%23666197%22/%3E%3Crect%20x=%226%22%20y=%2221%22%20width=%229.4%22%20height=%229.4%22%20fill=%22%232E3192%22/%3E%3Crect%20x=%2216%22%20y=%2221%22%20width=%229.4%22%20height=%229.4%22%20fill=%22%237375B6%22/%3E%3C/svg%3E">
 
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="第1回 東大起業 Weekend">
 <meta property="og:title" content="第1回 東大起業 Weekend｜アイデアから、動くプロダクトまで。">
-<meta property="og:description" content="2026年10月2日(金)〜4日(日) 開催。プログラミング未経験歓迎、選考なし。現役東大生・院生を中心に、アイデアからMVP開発まで72時間で走り抜ける超実践型スタートアップイベント。審査員：Coral Capital 共同創業者 澤山陽平 氏。">
+<meta property="og:description" content="2026年10月2日(金)〜4日(日) 開催。プログラミング未経験歓迎、選考なし・先着20名。現役東大生・院生を中心に、アイデアからMVP開発まで72時間で走り抜ける超実践型スタートアップイベント。審査員：Coral Capital 創業パートナー 澤山陽平 氏。">
 <meta property="og:url" content="./">
 <meta property="og:image" content="./ogp.png">
 <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="第1回 東大起業 Weekend">
-<meta name="twitter:description" content="2026年10月2日(金)〜4日(日) 開催。プログラミング未経験歓迎、選考なし。現役東大生・院生を中心に、アイデアからMVP開発まで72時間で走り抜ける超実践型スタートアップイベント。審査員：Coral Capital 共同創業者 澤山陽平 氏。">
+<meta name="twitter:description" content="2026年10月2日(金)〜4日(日) 開催。プログラミング未経験歓迎、選考なし・先着20名。現役東大生・院生を中心に、アイデアからMVP開発まで72時間で走り抜ける超実践型スタートアップイベント。審査員：Coral Capital 創業パートナー 澤山陽平 氏。">
 <meta name="twitter:image" content="./ogp.png">
 
 <style>
@@ -430,7 +430,7 @@ function EntryForm() {
 }
 
 /* ---------- カウントダウン ---------- */
-const KICKOFF = new Date("2026-10-02T18:00:00+09:00");
+const KICKOFF = new Date("2026-10-02T17:00:00+09:00");
 
 function Countdown() {
   const calc = () => {
@@ -453,7 +453,7 @@ function Countdown() {
         <span className="font-mono-ui text-[11px] tracking-[.18em] uppercase text-white/60">
           {t ? "Kickoff まで" : "開催中"}
         </span>
-        <span className="ml-auto font-mono-ui text-[11px] tracking-[.1em] text-sky">10/02 18:00</span>
+        <span className="ml-auto font-mono-ui text-[11px] tracking-[.1em] text-sky">10/02 17:00</span>
       </div>
       <div className="grid grid-cols-4 divide-x divide-white/10">
         {cells.map(([label, v]) => (
@@ -465,7 +465,7 @@ function Countdown() {
       </div>
       <div className="border-t border-white/10 px-5 py-3.5">
         <p className="font-mono-ui text-[11px] leading-relaxed text-white/60">
-          2泊3日 / 72時間 — アイデアから<span className="text-sky">動くMVP</span>まで。
+          3日間 / 72時間 — アイデアから<span className="text-sky">動くMVP</span>まで。
         </p>
       </div>
     </div>
@@ -531,9 +531,9 @@ function Hero() {
           <div className="flex flex-col gap-7">
             <dl className="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3 border-t border-line pt-6">
               {[
-                ["DATE", "2026.10.02(金) – 10.04(日)", "2泊3日", "CalendarDays"],
+                ["DATE", "2026.10.02(金) – 10.04(日)", "金曜夕方 – 日曜夜", "CalendarDays"],
                 ["PLACE", "EQUES オフィス ＋ 自由", "初日・最終日はオフィス", "MapPin"],
-                ["ENTRY", "選考なし", "先着・定員 9〜12名", "UserCheck"],
+                ["ENTRY", "選考なし", "先着 20名", "UserCheck"],
               ].map(([k, v, sub, icon]) => (
                 <div key={k} className="flex flex-col gap-1.5">
                   <dt className="flex items-center gap-1.5 font-mono-ui text-[10px] tracking-[.18em] text-muted">
@@ -555,7 +555,7 @@ function Hero() {
             <div className="flex items-center gap-4 border-t border-line pt-6">
               <img src={IMG.sawayama} alt="澤山 陽平 氏" className="h-14 w-14 rounded-full object-cover object-top border border-line" />
               <p className="text-[12.5px] leading-relaxed text-muted">
-                審査員：<strong className="font-bold text-navy">Coral Capital 共同創業者 澤山 陽平 氏</strong> ほか、<br className="hidden sm:block" />
+                審査員：<strong className="font-bold text-navy">Coral Capital 創業パートナー 澤山 陽平 氏</strong> ほか、<br className="hidden sm:block" />
                 第一線の起業家・VCが追加参戦予定。
               </p>
             </div>
@@ -701,7 +701,7 @@ function Judges() {
         </div>
         <div className="grid gap-8 p-6 sm:p-9 lg:grid-cols-[300px_1fr] lg:gap-10">
           <div className="flex flex-col gap-3">
-            <img src={IMG.sawayama} alt="澤山 陽平 氏（Coral Capital 共同創業者）" className="w-full rounded-[3px] border border-line object-cover" />
+            <img src={IMG.sawayama} alt="澤山 陽平 氏（Coral Capital 創業パートナー）" className="w-full rounded-[3px] border border-line object-cover" />
             <div className="flex items-center gap-2 font-mono-ui text-[10.5px] text-muted">
               <Icon name="GraduationCap" size={13} className="text-blue" />東京大学 出身
             </div>
@@ -709,7 +709,7 @@ function Judges() {
           <div className="flex flex-col gap-5">
             <div>
               <h3 className="font-display text-[28px] sm:text-[36px] leading-tight text-navy">澤山 陽平</h3>
-              <p className="mt-2 text-[14px] font-bold text-blue">Coral Capital 共同創業者 / パートナー</p>
+              <p className="mt-2 text-[14px] font-bold text-blue">Coral Capital 創業パートナー</p>
             </div>
             <p className="max-w-[58ch] text-[14.5px] leading-[2] text-ink/80">
               エネルギー系の専攻で東大を修め、エンジニアのバックグラウンドを持つ投資家。
@@ -782,13 +782,12 @@ function Judges() {
 /* ---------- Schedule ---------- */
 const DAYS = [
   {
-    tag: "DAY 1", date: "10.02", dow: "FRI", time: "18:00 – 21:00", place: "EQUES オフィス",
+    tag: "DAY 1", date: "10.02", dow: "FRI", time: "17:00 – 20:00", place: "EQUES オフィス",
     head: "集まって、組んで、走り出す。", color: "#0071BC",
     items: [
-      ["18:00", "オリエンテーション", "ルール・評価軸・3日間の地図を共有。", "Megaphone"],
-      ["18:30", "アイデアピッチ", "持ち寄ったアイデアを全員の前で。1人ずつ短く。", "Lightbulb"],
-      ["19:30", "チームビルディング", "アイデアとスキルを掛け合わせて3〜4名のチームへ。", "Users"],
-      ["20:00", "懇親会", "初日から飲みながら壁打ち。ここで熱が決まる。", "PartyPopper"],
+      ["17:00", "オリエンテーション・懇親会", "ルール・評価軸・3日間の地図を共有しながら、まずは参加者同士で顔を合わせる。", "Megaphone"],
+      ["18:00", "アイデアピッチ", "持ち寄ったアイデアを全員の前で。1人ずつ短く。", "Lightbulb"],
+      ["19:00", "チームビルディング", "アイデアとスキルを掛け合わせて3〜4名のチームへ。", "Users"],
     ],
   },
   {
@@ -861,16 +860,20 @@ function Schedule() {
           </div>
         ))}
       </div>
+      <p className="mt-8 flex items-start gap-2 font-mono-ui text-[11px] leading-relaxed text-muted">
+        <Icon name="Plus" size={13} className="mt-0.5 shrink-0 text-blue" />
+        タイムスケジュールは変更になる場合があります。最新情報は本ページで更新します。
+      </p>
     </Section>
   );
 }
 
 /* ---------- Outline ---------- */
 const OUTLINE = [
-  ["対象者", "現役東大生・東大院生を中心とした、幅広い大学生・大学院生", "学部・専攻・プログラミング経験は不問", "GraduationCap"],
-  ["募集人数", "計 9〜12名", "1チーム3〜4名 × 3チームを想定", "Users"],
+  ["対象者", "現役東大生・東大院生を中心とした、幅広い大学生・大学院生", "学部・専攻・プログラミング経験は不問。関心のある中高生の参加も歓迎です。", "GraduationCap"],
+  ["募集人数", "先着 20名", "", "Users"],
   ["参加費", "1人 3,000円 程度", "リファラルを受けた参加者は実質無料", "Wallet"],
-  ["開催日程", "2026年10月2日(金) 〜 10月4日(日)", "2泊3日", "CalendarDays"],
+  ["開催日程", "2026年10月2日(金) 〜 10月4日(日)", "3日間", "CalendarDays"],
   ["作業場所", "初日・最終日は EQUES オフィス / それ以外は自由", "オフィスでの宿泊は不可", "MapPin"],
   ["選考", "なし", "エントリー順に受付（定員に達し次第終了）", "UserCheck"],
 ];
@@ -908,12 +911,12 @@ function Outline() {
 
 /* ---------- FAQ ---------- */
 const FAQ = [
-  { q: "プログラミング経験がなくても大丈夫ですか？", a: "むしろ歓迎します。本イベントは「書ける人のための大会」ではありません。AIツールやノーコード、そしてメンターのサポートを使って開発を進めるので、未経験からでも3日間でプロダクトを形にできます。必要なのは、手を動かし切る気持ちだけです。" },
+  { q: "プログラミング経験がなくても大丈夫ですか？", a: "歓迎します。本イベントはAIツールやノーコード、そしてメンターのサポートを使って開発を進められるため、未経験からでも3日間でプロダクトを形にできます。また、エンジニアとビジネスサイド、デザイナーなどが混在するようなチーム設計を行うため心配はいりません。" },
   { q: "アイデアがなくても参加できますか？", a: "初日のテーマ決めに時間をかけすぎないよう、事前にアイデアを考えて持ち寄る形式を推奨しています。完成度は問いません。「こんな課題が気になっている」というレベルでも構いませんので、1つは言語化して当日お越しください。" },
   { q: "選考はありますか？", a: "選考はありません。エントリーいただいた方から順に受け付けます（定員に達し次第、受付を終了します）。" },
   { q: "チームは自分で組む必要がありますか？", a: "初日のアイデアピッチのあとにチームビルディングの時間を設けます。1人での参加でも問題ありません。1チーム3〜4名を想定しています。" },
   { q: "2日目はどこで作業しますか？宿泊はできますか？", a: "2日目の作業場所は自由です（EQUESオフィス・オンラインいずれでもメンタリングを受けられます）。なお、オフィスでの宿泊はできませんのでご注意ください。" },
-  { q: "東大生以外も参加できますか？", a: "現役東大生・東大院生を中心としていますが、幅広い大学生・大学院生の方にご参加いただけます。学部・専攻も不問です。" },
+  { q: "東大生以外も参加できますか？", a: "現役東大生・東大院生を中心としていますが、幅広い大学生・大学院生の方にご参加いただけます。学部・専攻も不問です。また、関心のある中高生の参加も歓迎しています。" },
 ];
 
 function Faq() {
@@ -972,10 +975,10 @@ function EntryCta() {
             </h2>
             <p className="max-w-[52ch] text-[15px] leading-[1.95] text-white/80">
               選考はありません。必要なのは、アイデアひとつと、72時間走り切る覚悟だけ。
-              定員 9〜12名の少人数開催です。埋まる前に、席を取ってください。
+              先着 20名の少人数開催です。埋まる前に、席を取ってください。
             </p>
             <dl className="flex w-full flex-wrap gap-x-8 gap-y-3 border-t border-white/15 pt-5">
-              {[["DATE", "2026.10.02 – 10.04"], ["SEATS", "9〜12名"], ["FEE", "3,000円程度"], ["SELECTION", "なし"]].map(([k, v]) => (
+              {[["DATE", "2026.10.02 – 10.04"], ["SEATS", "先着 20名"], ["FEE", "3,000円程度"], ["SELECTION", "なし"]].map(([k, v]) => (
                 <div key={k} className="flex flex-col gap-1">
                   <dt className="font-mono-ui text-[10px] tracking-[.18em] text-white/45">{k}</dt>
                   <dd className="text-[14px] font-bold tnum text-white">{v}</dd>
@@ -1048,7 +1051,7 @@ function FloatingCta() {
       <div className="border-t border-line bg-white/95 px-4 py-3 backdrop-blur-md sm:rounded-[4px] sm:border sm:px-4 sm:py-3.5 sm:shadow-[0_20px_50px_-24px_rgba(27,20,100,.55)]">
         <div className="mx-auto flex max-w-content items-center gap-4">
           <div className="hidden sm:flex flex-col">
-            <span className="font-mono-ui text-[10px] tracking-[.16em] text-muted">10.02 – 10.04 / 定員 9〜12名</span>
+            <span className="font-mono-ui text-[10px] tracking-[.16em] text-muted">10.02 – 10.04 / 先着 20名</span>
             <span className="text-[13px] font-bold text-navy">席が埋まる前に。</span>
           </div>
           <EntryButton className="w-full sm:w-auto" />

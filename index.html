@@ -377,28 +377,21 @@ function EntryButton({ size = "base", tone = "action", className = "", external 
 }
 
 /* ---------- 埋め込みエントリーフォーム ---------- */
+/* 埋め込みが許可されない環境（プレビュー用サンドボックス等）では load が即座に発火し
+   中身が空になるため、読み込みに要した時間で判定して代替の導線に切り替える。 */
 function EntryForm() {
-  const [state, setState] = useState("loading");
+  const [status, setStatus] = useState("loading"); // loading | ready | unavailable
+  const startedAt = React.useRef(Date.now());
+
   useEffect(() => {
-    const id = setTimeout(() => setState((s) => (s === "ready" ? s : "blocked")), 5000);
+    const id = setTimeout(() => setStatus((v) => (v === "loading" ? "unavailable" : v)), 8000);
     return () => clearTimeout(id);
   }, []);
 
-  if (state === "blocked") {
-    return (
-      <div className="flex flex-col items-start gap-5 rounded-[4px] border border-line bg-white p-7 sm:p-9">
-        <div className="flex items-center gap-2.5">
-          <Icon name="FileText" size={16} className="text-action" />
-          <span className="font-mono-ui text-[11px] tracking-[.16em] uppercase text-muted">Entry Form</span>
-        </div>
-        <p className="text-[14px] leading-[1.9] text-ink/80">
-          このプレビュー環境では外部フォームの埋め込み表示が制限されています。
-          下のボタンから応募フォームを開いてください（公開サイトに設置した場合は、この位置にフォームがそのまま表示されます）。
-        </p>
-        <EntryButton size="lg" external>エントリーフォームを開く</EntryButton>
-      </div>
-    );
-  }
+  const handleLoad = () => {
+    const elapsed = Date.now() - startedAt.current;
+    setStatus(elapsed < 400 ? "unavailable" : "ready");
+  };
 
   return (
     <div className="w-full overflow-hidden rounded-[4px] border border-line bg-white">
@@ -406,25 +399,43 @@ function EntryForm() {
         <Icon name="FileText" size={15} className="text-action" />
         <span className="font-mono-ui text-[11px] tracking-[.16em] uppercase text-muted">Entry Form</span>
         <a href={FORM_URL} target="_blank" rel="noopener noreferrer"
-          className="ml-auto inline-flex items-center gap-1.5 font-mono-ui text-[11px] text-action hover:underline">
+          className="ml-auto inline-flex items-center gap-1.5 font-mono-ui text-[11px] font-bold text-action hover:underline">
           別タブで開く<Icon name="ExternalLink" size={13} />
         </a>
       </div>
-      <div className="relative">
-        {state === "loading" && (
-          <p className="absolute inset-x-0 top-16 text-center font-mono-ui text-[12px] text-muted">フォームを読み込んでいます…</p>
-        )}
-        <iframe
-          src={FORM_EMBED}
-          title="第1回 東大起業 Weekend エントリーフォーム"
-          onLoad={() => setState("ready")}
-          className="block w-full"
-          style={{ height: "1180px", border: 0 }}
-          loading="lazy"
-        >
-          読み込んでいます…
-        </iframe>
-      </div>
+
+      {status === "ready" && (
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-line px-5 py-3">
+          <span className="text-[12px] text-muted">フォームが表示されない場合はこちら →</span>
+          <EntryButton size="sm" external>エントリーフォームを開く</EntryButton>
+        </div>
+      )}
+
+      {status === "unavailable" ? (
+        <div className="flex flex-col items-start gap-5 px-7 py-10">
+          <p className="font-display text-[19px] leading-snug text-navy">応募フォームへ進む</p>
+          <p className="text-[13.5px] leading-[1.9] text-ink/75">
+            氏名・所属・持ち込みたいアイデアの3項目だけ。<br className="hidden sm:block" />
+            所要 2分ほどで完了します。
+          </p>
+          <EntryButton size="lg" external>エントリーフォームを開く</EntryButton>
+        </div>
+      ) : (
+        <div className="relative transition-[height] duration-300" style={{ height: status === "ready" ? "1180px" : "300px" }}>
+          <iframe
+            src={FORM_EMBED}
+            title="第1回 東大起業 Weekend エントリーフォーム"
+            onLoad={handleLoad}
+            className="absolute inset-0 h-full w-full"
+            style={{ border: 0 }}
+          />
+          {status === "loading" && (
+            <div className="absolute inset-0 grid place-items-center bg-white">
+              <p className="font-mono-ui text-[12px] text-muted">フォームを読み込んでいます…</p>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
@@ -1083,6 +1094,4 @@ function App() {
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 </script>
-
-</body>
-</html>
+\n</body>\n</html>\n
